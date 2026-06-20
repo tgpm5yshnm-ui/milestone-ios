@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Milestone — Support</title>
-<meta name="description" content="Get help with Milestone, the net worth and investment calculator app. Contact support, browse FAQs, or send us a message.">
+<title>Milestone — Privacy Policy</title>
+<meta name="description" content="Privacy Policy for Milestone, the net worth and investment calculator app. Learn what data we collect, how it's used, and your rights.">
 
 <style>
   :root {
@@ -31,13 +31,12 @@
     background: var(--bg);
     color: var(--text);
     font-family: -apple-system, "SF Pro Rounded", "SF Pro Display", system-ui, sans-serif;
-    line-height: 1.5;
+    line-height: 1.6;
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
   }
 
-  /* Ambient ring glow — echoes the app icon's progress ring */
   .glow-ring {
     position: fixed;
     top: 50%;
@@ -46,7 +45,7 @@
     height: 900px;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(46,255,107,0.07) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(46,255,107,0.06) 0%, transparent 60%);
     pointer-events: none;
     z-index: 0;
   }
@@ -60,22 +59,45 @@
     background-size: 64px 64px;
     pointer-events: none;
     z-index: 0;
-    mask-image: radial-gradient(circle at 50% 30%, black 0%, transparent 70%);
+    mask-image: radial-gradient(circle at 50% 20%, black 0%, transparent 65%);
   }
 
   .wrap {
     position: relative;
     z-index: 1;
-    max-width: 640px;
+    max-width: 720px;
     margin: 0 auto;
-    padding: 72px 24px 96px;
+    padding: 56px 24px 96px;
+  }
+
+  /* ---------- Top nav ---------- */
+  .topnav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 48px;
+  }
+
+  .topnav a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.15s ease;
+  }
+
+  .topnav a:hover { color: var(--green); }
+
+  .ring-mark {
+    width: 28px;
+    height: 28px;
   }
 
   /* ---------- Header ---------- */
-  header {
-    text-align: center;
-    margin-bottom: 56px;
-  }
+  header { margin-bottom: 44px; }
 
   .badge {
     display: inline-flex;
@@ -86,7 +108,7 @@
     font-weight: 600;
     letter-spacing: 0.3em;
     color: rgba(46,255,107,0.65);
-    margin-bottom: 18px;
+    margin-bottom: 16px;
   }
 
   .badge::before, .badge::after {
@@ -99,234 +121,223 @@
   }
 
   h1 {
-    font-size: clamp(28px, 8vw, 40px);
+    font-size: clamp(28px, 7vw, 38px);
     font-weight: 800;
     letter-spacing: -0.02em;
     line-height: 1.15;
-    white-space: normal;
-    word-break: break-word;
-    background: linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0.75) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
     margin-bottom: 12px;
   }
 
-  header p {
-    font-size: 16px;
+  .updated {
+    font-size: 13px;
+    color: var(--text-faint);
+  }
+
+  .intro {
+    font-size: 15px;
     color: var(--text-dim);
-    max-width: 420px;
-    margin: 0 auto;
+    margin-top: 18px;
+    max-width: 580px;
   }
 
-  /* ---------- Ring icon ---------- */
-  .ring-icon {
-    width: 76px;
-    height: 76px;
-    margin: 0 auto 28px;
-    position: relative;
-  }
-
-  .ring-icon svg { width: 100%; height: 100%; }
-
-  /* ---------- Cards ---------- */
-  .card {
+  /* ---------- TOC ---------- */
+  .toc {
     background: rgba(255,255,255,0.035);
     border: 1px solid var(--card-border);
-    border-radius: 20px;
-    padding: 28px;
-    margin-bottom: 20px;
+    border-radius: 16px;
+    padding: 20px 22px;
+    margin-bottom: 36px;
   }
 
-  .card-eyebrow {
+  .toc-title {
     font-family: "SF Mono", "Menlo", monospace;
     font-size: 10px;
     font-weight: 600;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.2em;
     color: rgba(46,255,107,0.55);
-    margin-bottom: 6px;
+    margin-bottom: 12px;
   }
 
-  .card h2 {
+  .toc ol {
+    list-style: none;
+    counter-reset: toc;
+    display: grid;
+    gap: 7px;
+  }
+
+  .toc li {
+    counter-increment: toc;
+    font-size: 13.5px;
+  }
+
+  .toc li::before {
+    content: counter(toc) ".";
+    color: var(--green);
+    font-weight: 700;
+    margin-right: 8px;
+    font-family: "SF Mono", "Menlo", monospace;
+    font-size: 12px;
+  }
+
+  .toc a {
+    color: var(--text-dim);
+    text-decoration: none;
+  }
+
+  .toc a:hover { color: var(--text); }
+
+  /* ---------- Sections ---------- */
+  section {
+    margin-bottom: 36px;
+    padding-top: 8px;
+  }
+
+  section h2 {
     font-size: 19px;
     font-weight: 700;
-    margin-bottom: 4px;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
   }
 
-  .card .sub {
+  section h2 .num {
+    font-family: "SF Mono", "Menlo", monospace;
     font-size: 13px;
-    color: var(--text-faint);
-    margin-bottom: 20px;
-  }
-
-  /* ---------- FAQ ---------- */
-  .faq-item {
-    border-bottom: 1px solid var(--card-border);
-    padding: 16px 0;
-  }
-  .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
-  .faq-item:first-child { padding-top: 0; }
-
-  .faq-q {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    font-size: 14.5px;
-    font-weight: 600;
-    color: var(--text);
-    gap: 12px;
-  }
-
-  .faq-q .chev {
-    flex-shrink: 0;
-    width: 16px;
-    height: 16px;
     color: var(--green);
-    transition: transform 0.25s ease;
+    font-weight: 600;
   }
 
-  .faq-item.open .faq-q .chev { transform: rotate(45deg); }
-
-  .faq-a {
-    font-size: 13.5px;
-    color: var(--text-dim);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, opacity 0.3s ease, padding-top 0.3s ease;
-    opacity: 0;
-  }
-
-  .faq-item.open .faq-a {
-    max-height: 240px;
-    opacity: 1;
-    padding-top: 10px;
-  }
-
-  /* ---------- Form ---------- */
-  label {
-    display: block;
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--text-faint);
-    margin-bottom: 7px;
-    margin-top: 16px;
-  }
-  label:first-of-type { margin-top: 0; }
-
-  input, textarea {
-    width: 100%;
-    background: rgba(255,255,255,0.05);
-    border: 1.5px solid var(--card-border);
-    border-radius: 12px;
-    padding: 13px 14px;
-    color: var(--text);
+  section p {
     font-size: 14.5px;
-    font-family: inherit;
-    transition: border-color 0.15s ease, background 0.15s ease;
+    color: var(--text-dim);
+    margin-bottom: 12px;
   }
 
-  input::placeholder, textarea::placeholder { color: var(--text-faint); }
+  section p:last-child { margin-bottom: 0; }
 
-  input:focus, textarea:focus {
-    outline: none;
-    border-color: rgba(46,255,107,0.5);
-    background: rgba(255,255,255,0.07);
-  }
+  section strong { color: var(--text); font-weight: 600; }
 
-  textarea { resize: vertical; min-height: 110px; }
-
-  .btn-send {
-    width: 100%;
-    margin-top: 22px;
-    padding: 15px;
-    border: none;
-    border-radius: 14px;
-    background: linear-gradient(90deg, var(--green), var(--cyan));
-    color: #04140a;
-    font-size: 15.5px;
-    font-weight: 700;
-    font-family: inherit;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    transition: filter 0.15s ease, transform 0.1s ease;
-  }
-
-  .btn-send:hover { filter: brightness(1.08); }
-  .btn-send:active { transform: scale(0.985); }
-  .btn-send:disabled { opacity: 0.55; cursor: not-allowed; }
-
-  .spinner {
-    width: 16px;
-    height: 16px;
-    border: 2px solid rgba(4,20,10,0.3);
-    border-top-color: #04140a;
-    border-radius: 50%;
-    animation: spin 0.7s linear infinite;
-    display: none;
-  }
-  @keyframes spin { to { transform: rotate(360deg); } }
-
-  .status-msg {
-    margin-top: 14px;
-    padding: 12px 14px;
-    border-radius: 10px;
-    font-size: 13.5px;
-    font-weight: 500;
-    display: none;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .status-msg.show {
-    display: flex;
-  }
-
-  .status-msg.success {
-    background: rgba(46,255,107,0.1);
-    border: 1px solid rgba(46,255,107,0.3);
-    color: #6dffa0;
-  }
-
-  .status-msg.error {
-    background: rgba(255,90,90,0.1);
-    border: 1px solid rgba(255,90,90,0.3);
-    color: #ff8a8a;
-  }
-
-  /* ---------- Quick links ---------- */
-  .quick-links {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-
-  .quick-link {
+  /* ---------- Data table ---------- */
+  .data-table {
     background: rgba(255,255,255,0.03);
     border: 1px solid var(--card-border);
     border-radius: 14px;
-    padding: 16px;
-    text-decoration: none;
-    color: var(--text);
-    transition: border-color 0.15s ease, background 0.15s ease;
+    overflow: hidden;
+    margin: 16px 0;
   }
 
-  .quick-link:hover {
-    border-color: rgba(46,255,107,0.3);
+  .data-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .data-row:last-child { border-bottom: none; }
+
+  .data-row.head {
     background: rgba(46,255,107,0.04);
   }
 
-  .quick-link .ql-icon { font-size: 18px; margin-bottom: 8px; display: block; }
-  .quick-link .ql-title { font-size: 13.5px; font-weight: 700; margin-bottom: 2px; }
-  .quick-link .ql-desc { font-size: 11.5px; color: var(--text-faint); }
+  .data-row.head span {
+    font-family: "SF Mono", "Menlo", monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: rgba(46,255,107,0.6);
+  }
+
+  .data-row span {
+    font-size: 12.5px;
+    color: var(--text-dim);
+  }
+
+  .data-row span:first-child { color: var(--text); font-weight: 600; }
+
+  @media (max-width: 540px) {
+    .data-row { grid-template-columns: 1fr; gap: 4px; }
+    .data-row span:not(:first-child)::before {
+      content: attr(data-label) ": ";
+      color: var(--text-faint);
+    }
+    .data-row.head { display: none; }
+  }
+
+  /* ---------- List styling ---------- */
+  section ul {
+    list-style: none;
+    margin: 12px 0;
+    display: grid;
+    gap: 8px;
+  }
+
+  section ul li {
+    font-size: 14.5px;
+    color: var(--text-dim);
+    padding-left: 20px;
+    position: relative;
+  }
+
+  section ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--green), var(--cyan));
+  }
+
+  /* ---------- Highlight card ---------- */
+  .highlight {
+    background: linear-gradient(135deg, rgba(46,255,107,0.08), rgba(0,229,255,0.04));
+    border: 1px solid rgba(46,255,107,0.25);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin: 16px 0;
+  }
+
+  .highlight p {
+    color: var(--text);
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .highlight strong { color: var(--green); }
+
+  /* ---------- Contact card ---------- */
+  .contact-card {
+    background: rgba(255,255,255,0.035);
+    border: 1px solid var(--card-border);
+    border-radius: 18px;
+    padding: 24px;
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  .contact-card h2 { justify-content: center; margin-bottom: 8px; }
+  .contact-card p { margin-bottom: 18px; }
+
+  .btn-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 28px;
+    border-radius: 12px;
+    background: linear-gradient(90deg, var(--green), var(--cyan));
+    color: #04140a;
+    font-size: 14.5px;
+    font-weight: 700;
+    text-decoration: none;
+  }
 
   /* ---------- Footer ---------- */
   footer {
     text-align: center;
-    margin-top: 48px;
+    margin-top: 56px;
     font-size: 12px;
     color: var(--text-faint);
   }
@@ -335,14 +346,11 @@
   footer a:hover { color: var(--green); }
 
   @media (max-width: 480px) {
-    .wrap { padding: 48px 18px 64px; }
-    .quick-links { grid-template-columns: 1fr; }
-    .card { padding: 22px; }
+    .wrap { padding: 40px 18px 64px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .spinner { animation: none; }
   }
 </style>
 </head>
@@ -353,186 +361,184 @@
 
 <div class="wrap">
 
-  <header>
-    <div class="ring-icon">
-      <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <nav class="topnav">
+    <a href="index.html">
+      <svg class="ring-mark" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <linearGradient id="navGrad" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stop-color="#2EFF6B"/>
             <stop offset="100%" stop-color="#00E5FF"/>
           </linearGradient>
         </defs>
-        <circle cx="40" cy="40" r="31" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="4"/>
-        <path d="M40,9 A31,31 0 1,1 25.7,63.7" fill="none" stroke="url(#ringGrad)" stroke-width="4" stroke-linecap="round"/>
-        <path d="M25,49 L25,31 L40,45 L55,31 L55,49" fill="none" stroke="url(#ringGrad)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="40" cy="40" r="31" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="4"/>
+        <path d="M40,9 A31,31 0 1,1 25.7,63.7" fill="none" stroke="url(#navGrad)" stroke-width="4" stroke-linecap="round"/>
+        <path d="M25,49 L25,31 L40,45 L55,31 L55,49" fill="none" stroke="url(#navGrad)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-    </div>
-    <div class="badge">MILESTONE SUPPORT</div>
-    <h1>We're here to help</h1>
-    <p>Questions about your subscription, a bug to report, or feedback on the app — send us a message and we'll get back to you within 1–2 business days.</p>
+      ← Back to Support
+    </a>
+  </nav>
+
+  <header>
+    <div class="badge">PRIVACY POLICY</div>
+    <h1>Your privacy, by design</h1>
+    <div class="updated">Last updated: June 20, 2026</div>
+    <p class="intro">
+      Milestone is built to keep your financial planning private. This policy explains exactly what
+      information the app interacts with, what we collect, and what we never touch.
+    </p>
   </header>
 
-  <!-- Quick links -->
-  <div class="quick-links" style="margin-bottom: 20px;">
-    <a class="quick-link" href="#faq">
-      <span class="ql-icon">💬</span>
-      <span class="ql-title">FAQ</span>
-      <span class="ql-desc">Common questions answered</span>
-    </a>
-    <a class="quick-link" href="#contact">
-      <span class="ql-icon">✉️</span>
-      <span class="ql-title">Contact Us</span>
-      <span class="ql-desc">Send a direct message</span>
-    </a>
+  <div class="highlight">
+    <p>
+      <strong>The short version:</strong> Milestone stores your financial inputs (assets, contributions,
+      goals, portfolio) only on your device. We never see your net worth, your portfolio holdings, or
+      your financial data — it never leaves your phone except to the market-data providers needed to
+      show live prices.
+    </p>
   </div>
 
-  <!-- FAQ -->
-  <section class="card" id="faq">
-    <div class="card-eyebrow">FREQUENTLY ASKED</div>
-    <h2>Common questions</h2>
-    <div class="sub">Most things are answered here</div>
+  <div class="toc">
+    <div class="toc-title">ON THIS PAGE</div>
+    <ol>
+      <li><a href="#info-we-collect">Information we collect</a></li>
+      <li><a href="#info-we-dont">Information we never collect</a></li>
+      <li><a href="#third-parties">Third-party services we use</a></li>
+      <li><a href="#how-we-use">How your information is used</a></li>
+      <li><a href="#data-storage">Data storage and security</a></li>
+      <li><a href="#purchases">Purchases and subscriptions</a></li>
+      <li><a href="#your-rights">Your rights and choices</a></li>
+      <li><a href="#children">Children's privacy</a></li>
+      <li><a href="#changes">Changes to this policy</a></li>
+      <li><a href="#contact-section">Contact us</a></li>
+    </ol>
+  </div>
 
-    <div class="faq-list">
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          Is Milestone free to use?
-          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-        </div>
-        <div class="faq-a">Yes. The Net Worth Calculator is completely free, forever — no trial, no sign-up. Live crypto prices, the stock calculator, and the portfolio tracker are part of Milestone Premium.</div>
+  <section id="info-we-collect">
+    <h2><span class="num">01</span> Information we collect</h2>
+    <p>Milestone is designed to minimize data collection. Here's a complete breakdown of what touches our systems versus what stays entirely on your device:</p>
+
+    <div class="data-table">
+      <div class="data-row head">
+        <span>DATA TYPE</span>
+        <span>WHERE IT'S STORED</span>
+        <span>SHARED WITH US?</span>
       </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          What's included in Premium?
-          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-        </div>
-        <div class="faq-a">Premium unlocks live crypto prices for the top 250 coins, a real-time stock calculator, and the Portfolio tab where you can track every asset's current value against your target price. Plans: $4.99/month, $34.99/year, or $199 once for lifetime access.</div>
+      <div class="data-row">
+        <span data-label="Data">Net worth inputs (assets, contributions, growth rate, goal)</span>
+        <span data-label="Storage">On-device only (SwiftData)</span>
+        <span data-label="Shared">Never</span>
       </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          How do I restore my purchase on a new device?
-          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-        </div>
-        <div class="faq-a">Open the Premium paywall from any locked tab (Crypto, Stocks, or Portfolio) and tap "Restore Purchases" near the bottom. Make sure you're signed in with the same Apple ID you used to subscribe.</div>
+      <div class="data-row">
+        <span data-label="Data">Portfolio holdings (crypto/stock symbols, quantities, target prices)</span>
+        <span data-label="Storage">On-device only (SwiftData)</span>
+        <span data-label="Shared">Never</span>
       </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          How do I cancel my subscription?
-          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-        </div>
-        <div class="faq-a">Subscriptions are managed entirely through Apple. Go to Settings → [your name] → Subscriptions on your iPhone, select Milestone, and tap Cancel Subscription. Lifetime purchases never renew and don't need to be cancelled.</div>
+      <div class="data-row">
+        <span data-label="Data">Search queries (coin/stock symbols you search)</span>
+        <span data-label="Storage">Sent to price provider, not stored by us</span>
+        <span data-label="Shared">Yes — to CoinGecko / Twelve Data only</span>
       </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          Where does the live price data come from?
-          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-        </div>
-        <div class="faq-a">Crypto prices come from CoinGecko. Stock prices come from Twelve Data. Both update live when you open the app or tap refresh — Milestone never stores or sells your financial data.</div>
+      <div class="data-row">
+        <span data-label="Data">Contact form submissions (name, email, message)</span>
+        <span data-label="Storage">Sent via EmailJS to our inbox</span>
+        <span data-label="Shared">Yes — only if you submit the form</span>
       </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          My data disappeared after updating the app. What happened?
-          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-        </div>
-        <div class="faq-a">Your sliders, portfolio, and settings are stored locally on your device and should persist across updates. If something looks off, try force-closing and reopening the app first — if the issue continues, send us a message below with your device model and iOS version.</div>
+      <div class="data-row">
+        <span data-label="Data">Purchase/subscription status</span>
+        <span data-label="Storage">Managed entirely by Apple (StoreKit)</span>
+        <span data-label="Shared">With Apple only, per their policies</span>
       </div>
     </div>
+
+    <p>We do not collect your name, email, location, contacts, photos, or device identifiers unless you voluntarily provide them through the in-app Contact Us form.</p>
   </section>
 
-  <!-- Contact form -->
-  <section class="card" id="contact">
-    <div class="card-eyebrow">GET IN TOUCH</div>
-    <h2>Send us a message</h2>
-    <div class="sub">We typically reply within 1–2 business days</div>
+  <section id="info-we-dont">
+    <h2><span class="num">02</span> Information we never collect</h2>
+    <p>Milestone contains no analytics SDKs, no advertising networks, and no third-party trackers. Specifically, we do not collect:</p>
+    <ul>
+      <li>Advertising identifiers (IDFA) or device fingerprinting data</li>
+      <li>Location data of any kind</li>
+      <li>Contacts, photos, or media library access</li>
+      <li>Browsing history or behavioral analytics</li>
+      <li>Your actual net worth, account balances, or holdings — these never leave your device</li>
+    </ul>
+  </section>
 
-    <form id="contactForm">
-      <label for="name">Your name</label>
-      <input type="text" id="name" name="from_name" placeholder="John Appleseed" required>
+  <section id="third-parties">
+    <h2><span class="num">03</span> Third-party services we use</h2>
+    <p>Milestone integrates with the following third-party services, each only for the specific function listed. We do not control these services' own data practices — review their policies for details on what they collect when contacted by the app.</p>
+    <ul>
+      <li><strong>CoinGecko</strong> — provides live cryptocurrency price data. Your search query (a coin symbol or name) is sent to CoinGecko's API; no personal identifiers are attached.</li>
+      <li><strong>Twelve Data</strong> — provides live stock and ETF price data. Your search query (a ticker symbol) is sent to Twelve Data's API; no personal identifiers are attached.</li>
+      <li><strong>EmailJS</strong> — powers the in-app "Contact Us" feature. If you submit the contact form, your name, email address, and message are transmitted via EmailJS to our support inbox.</li>
+      <li><strong>Apple StoreKit</strong> — processes all subscription and lifetime purchases. Payment information is handled entirely by Apple; Milestone never sees or stores your payment details.</li>
+    </ul>
+  </section>
 
-      <label for="email">Email address</label>
-      <input type="email" id="email" name="from_email" placeholder="you@example.com" required>
+  <section id="how-we-use">
+    <h2><span class="num">04</span> How your information is used</h2>
+    <p>The limited information described above is used solely to:</p>
+    <ul>
+      <li>Display live, accurate market prices for the assets you search</li>
+      <li>Respond to support requests you submit through the Contact Us form</li>
+      <li>Verify and unlock premium features you've purchased</li>
+    </ul>
+    <p>We do not sell, rent, or share your information with advertisers, data brokers, or any party not listed in this policy.</p>
+  </section>
 
-      <label for="subject">Subject</label>
-      <input type="text" id="subject" name="subject" placeholder="How can we help?" required>
+  <section id="data-storage">
+    <h2><span class="num">05</span> Data storage and security</h2>
+    <p>All of your financial inputs — net worth sliders, portfolio assets, target prices, and app settings — are stored locally on your device using Apple's SwiftData framework. This data is protected by your device's built-in security (passcode, Face ID, or Touch ID) and is never transmitted to our servers, because we do not operate any servers that store user data.</p>
+    <p>If you delete the Milestone app from your device, all locally stored data is permanently and immediately erased. We have no copy and cannot recover it.</p>
+  </section>
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" placeholder="Tell us what's on your mind…" required></textarea>
+  <section id="purchases">
+    <h2><span class="num">06</span> Purchases and subscriptions</h2>
+    <p>Milestone offers an optional Premium upgrade (monthly, yearly, or lifetime) that unlocks live crypto prices, the stock calculator, and the portfolio tracker. All purchases are processed exclusively through Apple's In-App Purchase system (StoreKit 2).</p>
+    <p>We do not receive your payment card details, billing address, or Apple ID at any point — this information is handled entirely between you and Apple. We only receive a cryptographically signed confirmation that a valid purchase exists, used to unlock the relevant features.</p>
+    <p>To manage, cancel, or request a refund for a subscription, go to <strong>Settings → [your name] → Subscriptions</strong> on your iPhone, or visit <strong>reportaproblem.apple.com</strong>.</p>
+  </section>
 
-      <button type="submit" class="btn-send" id="sendBtn">
-        <div class="spinner" id="spinner"></div>
-        <span id="btnLabel">Send Message</span>
-      </button>
+  <section id="your-rights">
+    <h2><span class="num">07</span> Your rights and choices</h2>
+    <p>Because nearly all of your data stays on your device, you have direct control over it at all times:</p>
+    <ul>
+      <li><strong>Access and deletion:</strong> Open the app to view your data; delete the app to permanently erase it</li>
+      <li><strong>Correction:</strong> Edit any value directly in the app — sliders, manual entry fields, or the Reset button restore defaults instantly</li>
+      <li><strong>Data portability:</strong> Since data is stored locally, there is no server-side copy to export or transfer</li>
+      <li><strong>Withdraw consent:</strong> If you've submitted the Contact Us form, email us at the address below to request deletion of that message</li>
+    </ul>
+    <p>If you are located in the European Economic Area, United Kingdom, or California, you may have additional rights under GDPR or the CCPA. Contact us using the details below to exercise these rights.</p>
+  </section>
 
-      <div class="status-msg success" id="successMsg">✓ Message sent — we'll get back to you soon.</div>
-      <div class="status-msg error" id="errorMsg">⚠ Something went wrong. Please try again or email us directly.</div>
-    </form>
+  <section id="children">
+    <h2><span class="num">08</span> Children's privacy</h2>
+    <p>Milestone is not directed at children under 13, and we do not knowingly collect personal information from children under 13. If you believe a child has provided personal information to us through the Contact Us form, please contact us so we can delete it.</p>
+  </section>
+
+  <section id="changes">
+    <h2><span class="num">09</span> Changes to this policy</h2>
+    <p>We may update this Privacy Policy from time to time to reflect changes in the app or applicable law. Any changes will be posted on this page with an updated "Last updated" date. Continued use of Milestone after changes are posted constitutes acceptance of the revised policy.</p>
+  </section>
+
+  <section id="contact-section">
+    <div class="contact-card">
+      <h2 style="justify-content:center;"><span class="num">10</span> Contact us</h2>
+      <p>Questions about this Privacy Policy or how your data is handled? We're happy to help.</p>
+      <a class="btn-link" href="index.html#contact">
+        Send us a message →
+      </a>
+    </div>
   </section>
 
   <footer>
     <p>Milestone — Net Worth & Investment Calculator</p>
     <p style="margin-top: 6px;">© 2026 Milestone. All rights reserved.</p>
-    <p style="margin-top: 10px;"><a href="privacy.html">Privacy Policy</a></p>
+    <p style="margin-top: 10px;"><a href="index.html">Support</a> · <a href="privacy.html">Privacy Policy</a></p>
   </footer>
 
 </div>
-
-<!-- EmailJS SDK -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>
-  // ── EmailJS configuration ────────────────────────────────────────────────
-  const EMAILJS_PUBLIC_KEY  = "lJQiiUOL0ZxfOHuMP";
-  const EMAILJS_SERVICE_ID  = "service_bbhc8is";
-  const EMAILJS_TEMPLATE_ID = "template_tlkalxd";
-
-  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
-
-  const form       = document.getElementById("contactForm");
-  const sendBtn     = document.getElementById("sendBtn");
-  const spinner     = document.getElementById("spinner");
-  const btnLabel     = document.getElementById("btnLabel");
-  const successMsg   = document.getElementById("successMsg");
-  const errorMsg      = document.getElementById("errorMsg");
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    // Reset status banners
-    successMsg.classList.remove("show");
-    errorMsg.classList.remove("show");
-
-    // Loading state
-    sendBtn.disabled = true;
-    spinner.style.display = "block";
-    btnLabel.textContent = "Sending…";
-
-    emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form)
-      .then(function () {
-        successMsg.classList.add("show");
-        form.reset();
-      })
-      .catch(function (err) {
-        console.error("EmailJS error:", err);
-        errorMsg.classList.add("show");
-      })
-      .finally(function () {
-        sendBtn.disabled = false;
-        spinner.style.display = "none";
-        btnLabel.textContent = "Send Message";
-      });
-  });
-
-  // ── FAQ accordion ─────────────────────────────────────────────────────────
-  function toggleFaq(el) {
-    const item = el.parentElement;
-    const wasOpen = item.classList.contains("open");
-    document.querySelectorAll(".faq-item.open").forEach(i => i.classList.remove("open"));
-    if (!wasOpen) item.classList.add("open");
-  }
-</script>
 
 </body>
 </html>
